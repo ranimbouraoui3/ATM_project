@@ -1,0 +1,51 @@
+@font-face {
+    font-family: 'Gagalin';
+    src: url('fonts/Gagalin-Regular.otf');
+}
+
+#welcome {
+    -fx-font-family: 'Gagalin';
+    -fx-font-size: 60;
+}
+
+#background {
+    -fx-background-image: url("images/Background.png");
+    -fx-background-size: cover; /* Scales the image to fill the pane */
+    -fx-background-repeat: no-repeat; /* Prevents tiling */
+}
+
+
+#bank {
+	-fx-background-image: url("images/bank.png");
+	-fx-background-size: contain; /* or cover, depending on your needs */
+	-fx-background-repeat: no-repeat;
+	-fx-background-position: center;
+	
+}
+
+#insert_btn {
+    -fx-background-color: #FD7A00;  /* Vibrant orange background */
+    -fx-text-fill: #2F2F2F;         /* Darker grey text */
+    -fx-font-family: 'Montserrat'; /* Use Montserrat font */
+    -fx-font-weight: bold;          /* Make the font bold */
+    -fx-font-size: 26px;            /* Slightly larger font size */
+    -fx-border-radius: 30px;        /* Fully rounded button */
+    -fx-padding: 15px 40px;         /* Balanced padding for a pill shape */
+    -fx-cursor: hand;               /* Hand cursor on hover */
+    -fx-border-color: #FF9E40;      /* Subtle lighter border color */
+    -fx-border-width: 2px;          /* Border thickness */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 0, 2); /* Soft shadow */
+    -fx-alignment: center;          /* Center text in the button */
+    -fx-background-radius: 30px;    /* Match border-radius for smoothness */
+    -fx-transition: all 0.3s ease;  /* Smooth transitions for hover effects */
+}
+
+/* Hover effect for the button */
+#insert_btn:hover {
+    -fx-background-color: #FF8C00;  /* Brighter orange for hover */
+    -fx-border-color: #FFD54F;      /* Lightened border color */
+    -fx-text-fill: #000000;         /* Text turns black on hover */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.6), 15, 0.7, 0, 4); /* Enhanced and larger shadow */
+}
+
+

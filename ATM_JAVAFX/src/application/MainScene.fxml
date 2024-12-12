@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
+
+<AnchorPane fx:id="background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="633.0" prefWidth="956.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane layoutX="2.0" layoutY="4.0" prefHeight="627.0" prefWidth="948.0" visible="false">
+         <children>
+            <!-- TextFlow with Anchors -->
+            <TextFlow layoutX="191.0" layoutY="69.0" AnchorPane.leftAnchor="191.0" AnchorPane.topAnchor="69.0">
+               <Text style="-fx-fill: white; -fx-font-family: 'Gagalin'; -fx-font-size: 60;" text="Welcome To " />
+               <Text style="-fx-fill: #74a026; -fx-font-family: 'Gagalin'; -fx-font-size: 60;" text="Our Bank" />
+            </TextFlow>
+            <ImageView fitHeight="149.0" fitWidth="269.0" layoutX="726.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/bank.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="259.0" fitWidth="574.0" layoutX="266.0" layoutY="333.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/insert.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="insert_btn" layoutX="305.0" layoutY="204.0" mnemonicParsing="false" prefHeight="83.0" prefWidth="346.0" text="Insert Your Card" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutY="4.0" prefHeight="627.0" prefWidth="946.0">
+         <children>
+            <ImageView fitHeight="149.0" fitWidth="269.0" layoutX="714.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/bank.png" />
+               </image>
+            </ImageView>
+            <TextFlow layoutX="290.0" layoutY="70.0">
+               <children>
+                  <Text style="-fx-fill: white; -fx-font-family: 'Gagalin'; -fx-font-size: 60;" text="ENTER " />
+                  <Text style="-fx-fill: #74a026; -fx-font-family: 'Gagalin'; -fx-font-size: 60;" text="Your Pin" />
+               </children>
+            </TextFlow>
+            <ImageView fx:id="btn_1" fitHeight="150.0" fitWidth="200.0" layoutX="319.0" layoutY="285.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/1.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="btn_2" fitHeight="150.0" fitWidth="200.0" layoutX="414.0" layoutY="285.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/2.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="btn_3" fitHeight="150.0" fitWidth="200.0" layoutX="508.0" layoutY="285.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/3.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="btn_0" fitHeight="150.0" fitWidth="200.0" layoutX="414.0" layoutY="500.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/0.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="btn_4" fitHeight="150.0" fitWidth="200.0" layoutX="319.0" layoutY="354.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/4.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="btn_5" fitHeight="150.0" fitWidth="200.0" layoutX="414.0" layoutY="354.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/5.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="btn_6" fitHeight="150.0" fitWidth="200.0" layoutX="508.0" layoutY="354.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/6.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="btn_7" fitHeight="150.0" fitWidth="200.0" layoutX="319.0" layoutY="427.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/7.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="btn_8" fitHeight="150.0" fitWidth="200.0" layoutX="414.0" layoutY="427.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/8.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="btn_9" fitHeight="150.0" fitWidth="200.0" layoutX="508.0" layoutY="427.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/9.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="clear_btn" fitHeight="150.0" fitWidth="200.0" layoutX="319.0" layoutY="500.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/clear.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="run_btn" fitHeight="150.0" fitWidth="200.0" layoutX="508.0" layoutY="500.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/run.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="password_3" fitHeight="150.0" fitWidth="600.0" layoutX="381.0" layoutY="163.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@images/password_3.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="password_2" fitHeight="150.0" fitWidth="600.0" layoutX="381.0" layoutY="163.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@images/password_2.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="password_1" fitHeight="150.0" fitWidth="600.0" layoutX="381.0" layoutY="163.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@images/password_1.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="password_4" fitHeight="150.0" fitWidth="600.0" layoutX="381.0" layoutY="163.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@images/password_4.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="password_0" fitHeight="150.0" fitWidth="600.0" layoutX="381.0" layoutY="163.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/password_0.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="143.0" fitWidth="265.0" layoutX="-20.0" layoutY="468.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/decoration_pin.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
