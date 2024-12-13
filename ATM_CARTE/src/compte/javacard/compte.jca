@@ -1,0 +1,687 @@
+// converted by version 1.3
+// on Fri Dec 13 19:36:29 CET 2024
+
+.package compte {
+	.aid 0x1:0x2:0x3:0x4:0x5:0x6:0x7:0x8:0x9:0x0;
+	.version 1.0;
+
+	.imports {
+		0xA0:0x0:0x0:0x0:0x62:0x0:0x1 1.0;		//java/lang
+		0xA0:0x0:0x0:0x0:0x62:0x1:0x1 1.3;		//javacard/framework
+	}
+
+	.applet {
+		0x1:0x2:0x3:0x4:0x5:0x6:0x7:0x8:0x9:0x0:0x0 MonCompte;
+	}
+
+	.constantPool {
+		// 0
+		instanceFieldRef byte[] MonCompte$Transaction/type;
+		// 1
+		instanceFieldRef short MonCompte$Transaction/montant;
+		// 2
+		instanceFieldRef short MonCompte$Transaction/ID;
+		// 3
+		instanceFieldRef 1.9 MonCompte/pin;
+		// 4
+		instanceFieldRef short MonCompte/solde;
+		// 5
+		instanceFieldRef MonCompte$Transaction[] MonCompte/historique;
+		// 6
+		instanceFieldRef short MonCompte/historyIndex;
+		// 7
+		staticMethodRef 1.9.0(BB)V;		// javacard/framework/OwnerPIN.<init>(BB)V
+		// 8
+		staticFieldRef short MonCompte$Transaction/conteurID;
+		// 9
+		virtualMethodRef 1.9.8([BSB)V;		// update([BSB)V
+		// 10
+		staticMethodRef 0.0.0()V;		// java/lang/Object.<init>()V
+		// 11
+		classRef MonCompte$Transaction;
+		// 12
+		staticMethodRef 1.3.0()V;		// javacard/framework/Applet.<init>()V
+		// 13
+		classRef 1.9;		// javacard/framework/OwnerPIN
+		// 14
+		virtualMethodRef 1.3.1()V;		// register()V
+		// 15
+		classRef MonCompte;
+		// 16
+		staticMethodRef MonCompte/<init>()V;
+		// 17
+		virtualMethodRef 1.10.1()[B;		// getBuffer()[B
+		// 18
+		virtualMethodRef 1.3.3()Z;		// selectingApplet()Z
+		// 19
+		staticMethodRef 1.7.1(S)V;		// javacard/framework/ISOException.throwIt(S)V
+		// 20
+		virtualMethodRef 1.9.4()Z;		// isValidated()Z
+		// 21
+		staticMethodRef MonCompte/verifyPin(Ljavacard/framework/APDU;)V;
+			.descriptor	Ljavacard/framework/APDU;	1.10;
+
+		// 22
+		staticMethodRef MonCompte/deposer(Ljavacard/framework/APDU;)V;
+			.descriptor	Ljavacard/framework/APDU;	1.10;
+
+		// 23
+		staticMethodRef MonCompte/retirer(Ljavacard/framework/APDU;)V;
+			.descriptor	Ljavacard/framework/APDU;	1.10;
+
+		// 24
+		staticMethodRef MonCompte/consulterSolde(Ljavacard/framework/APDU;)V;
+			.descriptor	Ljavacard/framework/APDU;	1.10;
+
+		// 25
+		staticMethodRef MonCompte/changerPin(Ljavacard/framework/APDU;)V;
+			.descriptor	Ljavacard/framework/APDU;	1.10;
+
+		// 26
+		staticMethodRef MonCompte/consulterHistorique(Ljavacard/framework/APDU;)V;
+			.descriptor	Ljavacard/framework/APDU;	1.10;
+
+		// 27
+		virtualMethodRef 1.10.6()S;		// setIncomingAndReceive()S
+		// 28
+		virtualMethodRef 1.9.1([BSB)Z;		// check([BSB)Z
+		// 29
+		staticMethodRef 1.16.4([BS)S;		// javacard/framework/Util.getShort([BS)S
+		// 30
+		staticMethodRef MonCompte/ajouterTransaction([BS)V;
+		// 31
+		virtualMethodRef 1.10.7()S;		// setOutgoing()S
+		// 32
+		virtualMethodRef 1.10.9(S)V;		// setOutgoingLength(S)V
+		// 33
+		virtualMethodRef 1.10.8(SS)V;		// setOutgoingAndSend(SS)V
+		// 34
+		virtualMethodRef 1.10.4(SS)V;		// sendBytes(SS)V
+		// 35
+		staticMethodRef MonCompte$Transaction/<init>([BS)V;
+		// 36
+		staticMethodRef 1.16.2([BS[BSS)S;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+	}
+
+	.class  MonCompte$Transaction extends 0.0 {		// extends java/lang/Object
+
+		.fields {
+			 byte[] type 0;		// [B
+			 short montant 1;		// S
+			 short ID 2;		// S
+			private static short conteurID;		// S
+		}
+
+		.publicMethodTable 1 {
+			equals(Ljava/lang/Object;)Z;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.method public <init>([BS)V 0 {
+			.stack 3;
+			.locals 0;
+
+				L0:	aload_0;
+					invokespecial 10;		// java/lang/Object.<init>()V
+					aload_0;
+					aload_1;
+					putfield_a 0;		// reference compte/MonCompte$Transaction.type
+					aload_0;
+					sload_2;
+					putfield_s 1;		// short compte/MonCompte$Transaction.montant
+					aload_0;
+					getstatic_s 8;		// short compte/MonCompte$Transaction.conteurID
+					sconst_1;
+					sadd;
+					dup;
+					putstatic_s 8;		// short compte/MonCompte$Transaction.conteurID
+					putfield_s 2;		// short compte/MonCompte$Transaction.ID
+					return;
+		}
+
+	}
+
+	.class public MonCompte 0 extends 1.3 {		// extends javacard/framework/Applet
+
+		.fields {
+			private 1.9 pin 0;		// Ljavacard/framework/OwnerPIN;
+			private MonCompte$Transaction[] historique 1;		// [Lcompte/MonCompte$Transaction;
+			private short solde 2;		// S
+			private short historyIndex 3;		// S
+			private static final byte CLA_MONAPPLET = -80;		// B
+			private static final byte INS_DEPOSER = 1;		// B
+			private static final byte INS_RETIRER = 2;		// B
+			private static final byte INS_CONSULTER_SOLDE = 3;		// B
+			private static final byte INS_VERIFIER_PIN = 4;		// B
+			private static final byte INS_CHANGER_PIN = 5;		// B
+			private static final byte INS_CONSULTER_HIS = 6;		// B
+			private static final byte MAX_PIN_TRIES = 3;		// B
+			private static final short SW_PIN_VERIFICATION_REQUIRED = 25344;		// S
+			private static final short MAX_HISTORY_SIZE = 10;		// S
+		}
+
+		.publicMethodTable 7 {
+			equals(Ljava/lang/Object;)Z;
+			register()V;
+			register([BSB)V;
+			selectingApplet()Z;
+			deselect()V;
+			getShareableInterfaceObject(Ljavacard/framework/AID;B)Ljavacard/framework/Shareable;;
+			select()Z;
+			process(Ljavacard/framework/APDU;)V;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.method private <init>()V {
+			.stack 5;
+			.locals 0;
+
+				L0:	aload_0;
+					invokespecial 12;		// javacard/framework/Applet.<init>()V
+					aload_0;
+					new 13;		// javacard/framework/OwnerPIN
+					dup;
+					sconst_3;
+					sconst_4;
+					invokespecial 7;		// javacard/framework/OwnerPIN.<init>(BB)V
+					putfield_a 3;		// reference compte/MonCompte.pin
+					getfield_a_this 3;		// reference compte/MonCompte.pin
+					sconst_4;
+					newarray 11;
+					sconst_0;
+					sconst_4;
+					invokevirtual 9;		// update([BSB)V
+					aload_0;
+					sconst_0;
+					putfield_s 4;		// short compte/MonCompte.solde
+					aload_0;
+					bspush 10;
+					anewarray 11;		// compte/MonCompte$Transaction
+					putfield_a 5;		// reference compte/MonCompte.historique
+					aload_0;
+					sconst_0;
+					putfield_s 6;		// short compte/MonCompte.historyIndex
+					aload_0;
+					invokevirtual 14;		// register()V
+					return;
+		}
+
+		.method public static install([BSB)V 0 {
+			.stack 1;
+			.locals 0;
+
+				L0:	new 15;		// compte/MonCompte
+					invokespecial 16;		// compte/MonCompte.<init>()V
+					return;
+		}
+
+		.method public process(Ljavacard/framework/APDU;)V 7 {
+			.stack 2;
+			.locals 1;
+
+			.descriptor	Ljavacard/framework/APDU;	1.10;
+
+				L0:	aload_1;
+					invokevirtual 17;		// getBuffer()[B
+					astore_2;
+					aload_0;
+					invokevirtual 18;		// selectingApplet()Z
+					ifeq L2;
+				L1:	return;
+				L2:	aload_2;
+					sconst_0;
+					baload;
+					bspush -80;
+					if_scmpeq L4;
+				L3:	sspush 28160;
+					invokestatic 19;		// javacard/framework/ISOException.throwIt(S)V
+				L4:	getfield_a_this 3;		// reference compte/MonCompte.pin
+					invokevirtual 20;		// isValidated()Z
+					ifne L7;
+				L5:	aload_2;
+					sconst_1;
+					baload;
+					sconst_4;
+					if_scmpeq L7;
+				L6:	sspush 25344;
+					invokestatic 19;		// javacard/framework/ISOException.throwIt(S)V
+				L7:	aload_2;
+					sconst_1;
+					baload;
+					stableswitch L14 1 6 L9 L10 L11 L8 L12 L13;
+				L8:	aload_0;
+					aload_1;
+					invokespecial 21;		// compte/MonCompte.verifyPin(Ljavacard/framework/APDU;)V
+					goto L15;
+				L9:	aload_0;
+					aload_1;
+					invokespecial 22;		// compte/MonCompte.deposer(Ljavacard/framework/APDU;)V
+					goto L15;
+				L10:	aload_0;
+					aload_1;
+					invokespecial 23;		// compte/MonCompte.retirer(Ljavacard/framework/APDU;)V
+					goto L15;
+				L11:	aload_0;
+					aload_1;
+					invokespecial 24;		// compte/MonCompte.consulterSolde(Ljavacard/framework/APDU;)V
+					goto L15;
+				L12:	aload_0;
+					aload_1;
+					invokespecial 25;		// compte/MonCompte.changerPin(Ljavacard/framework/APDU;)V
+					goto L15;
+				L13:	aload_0;
+					aload_1;
+					invokespecial 26;		// compte/MonCompte.consulterHistorique(Ljavacard/framework/APDU;)V
+					goto L15;
+				L14:	sspush 27904;
+					invokestatic 19;		// javacard/framework/ISOException.throwIt(S)V
+				L15:	return;
+		}
+
+		.method private verifyPin(Ljavacard/framework/APDU;)V {
+			.stack 4;
+			.locals 2;
+
+			.descriptor	Ljavacard/framework/APDU;	1.10;
+
+				L0:	aload_1;
+					invokevirtual 17;		// getBuffer()[B
+					astore_2;
+					aload_2;
+					sconst_4;
+					baload;
+					sstore_3;
+					aload_1;
+					invokevirtual 27;		// setIncomingAndReceive()S
+					pop;
+					getfield_a_this 3;		// reference compte/MonCompte.pin
+					aload_2;
+					sconst_5;
+					sload_3;
+					invokevirtual 28;		// check([BSB)Z
+					ifeq L2;
+				L1:	return;
+				L2:	sspush 27264;
+					invokestatic 19;		// javacard/framework/ISOException.throwIt(S)V
+					return;
+		}
+
+		.method private deposer(Ljavacard/framework/APDU;)V {
+			.stack 5;
+			.locals 3;
+
+			.descriptor	Ljavacard/framework/APDU;	1.10;
+
+				L0:	aload_1;
+					invokevirtual 17;		// getBuffer()[B
+					astore_2;
+					aload_1;
+					invokevirtual 27;		// setIncomingAndReceive()S
+					pop;
+					aload_2;
+					sconst_5;
+					invokestatic 29;		// javacard/framework/Util.getShort([BS)S
+					sstore_3;
+					getfield_s_this 4;		// short compte/MonCompte.solde
+					sload_3;
+					sadd;
+					sstore 4;
+					aload_0;
+					sload 4;
+					putfield_s 4;		// short compte/MonCompte.solde
+					aload_0;
+					sconst_5;
+					newarray 11;
+					dup;
+					sconst_0;
+					bspush 68;
+					bastore;
+					dup;
+					sconst_1;
+					bspush 101;
+					bastore;
+					dup;
+					sconst_2;
+					bspush 112;
+					bastore;
+					dup;
+					sconst_3;
+					bspush 111;
+					bastore;
+					dup;
+					sconst_4;
+					bspush 116;
+					bastore;
+					sload_3;
+					invokespecial 30;		// compte/MonCompte.ajouterTransaction([BS)V
+					aload_1;
+					invokevirtual 31;		// setOutgoing()S
+					pop;
+					aload_1;
+					sconst_0;
+					invokevirtual 32;		// setOutgoingLength(S)V
+					sspush -28672;
+					invokestatic 19;		// javacard/framework/ISOException.throwIt(S)V
+					return;
+		}
+
+		.method private retirer(Ljavacard/framework/APDU;)V {
+			.stack 5;
+			.locals 3;
+
+			.descriptor	Ljavacard/framework/APDU;	1.10;
+
+				L0:	aload_1;
+					invokevirtual 17;		// getBuffer()[B
+					astore_2;
+					aload_1;
+					invokevirtual 27;		// setIncomingAndReceive()S
+					sstore_3;
+					sload_3;
+					sconst_2;
+					if_scmpeq L2;
+				L1:	sspush 28417;
+					invokestatic 19;		// javacard/framework/ISOException.throwIt(S)V
+				L2:	aload_2;
+					sconst_5;
+					invokestatic 29;		// javacard/framework/Util.getShort([BS)S
+					sstore 4;
+					sload 4;
+					ifge L4;
+				L3:	sspush 28418;
+					invokestatic 19;		// javacard/framework/ISOException.throwIt(S)V
+				L4:	sload 4;
+					getfield_s_this 4;		// short compte/MonCompte.solde
+					if_scmple L6;
+				L5:	sspush 28419;
+					invokestatic 19;		// javacard/framework/ISOException.throwIt(S)V
+				L6:	aload_0;
+					dup;
+					getfield_s 4;		// short compte/MonCompte.solde
+					sload 4;
+					ssub;
+					putfield_s 4;		// short compte/MonCompte.solde
+					aload_0;
+					bspush 7;
+					newarray 11;
+					dup;
+					sconst_0;
+					bspush 82;
+					bastore;
+					dup;
+					sconst_1;
+					bspush 101;
+					bastore;
+					dup;
+					sconst_2;
+					bspush 116;
+					bastore;
+					dup;
+					sconst_3;
+					bspush 114;
+					bastore;
+					dup;
+					sconst_4;
+					bspush 97;
+					bastore;
+					dup;
+					sconst_5;
+					bspush 105;
+					bastore;
+					dup;
+					bspush 6;
+					bspush 116;
+					bastore;
+					sload 4;
+					invokespecial 30;		// compte/MonCompte.ajouterTransaction([BS)V
+					aload_1;
+					invokevirtual 31;		// setOutgoing()S
+					pop;
+					aload_1;
+					sconst_0;
+					invokevirtual 32;		// setOutgoingLength(S)V
+					sspush -28672;
+					invokestatic 19;		// javacard/framework/ISOException.throwIt(S)V
+					return;
+		}
+
+		.method private consulterSolde(Ljavacard/framework/APDU;)V {
+			.stack 4;
+			.locals 1;
+
+			.descriptor	Ljavacard/framework/APDU;	1.10;
+
+				L0:	aload_1;
+					invokevirtual 17;		// getBuffer()[B
+					astore_2;
+					aload_2;
+					sconst_0;
+					getfield_s_this 4;		// short compte/MonCompte.solde
+					bspush 8;
+					sshr;
+					s2b;
+					bastore;
+					aload_2;
+					sconst_1;
+					getfield_s_this 4;		// short compte/MonCompte.solde
+					sspush 255;
+					sand;
+					s2b;
+					bastore;
+					aload_1;
+					sconst_0;
+					sconst_2;
+					invokevirtual 33;		// setOutgoingAndSend(SS)V
+					return;
+		}
+
+		.method private changerPin(Ljavacard/framework/APDU;)V {
+			.stack 4;
+			.locals 2;
+
+			.descriptor	Ljavacard/framework/APDU;	1.10;
+
+				L0:	aload_1;
+					invokevirtual 17;		// getBuffer()[B
+					astore_2;
+					getfield_a_this 3;		// reference compte/MonCompte.pin
+					invokevirtual 20;		// isValidated()Z
+					ifne L2;
+				L1:	sspush 25344;
+					invokestatic 19;		// javacard/framework/ISOException.throwIt(S)V
+				L2:	aload_1;
+					invokevirtual 27;		// setIncomingAndReceive()S
+					sstore_3;
+					sload_3;
+					sconst_4;
+					if_scmpeq L4;
+				L3:	sspush 26368;
+					invokestatic 19;		// javacard/framework/ISOException.throwIt(S)V
+				L4:	getfield_a_this 3;		// reference compte/MonCompte.pin
+					aload_2;
+					sconst_5;
+					sload_3;
+					s2b;
+					invokevirtual 9;		// update([BSB)V
+					aload_1;
+					invokevirtual 31;		// setOutgoing()S
+					pop;
+					aload_1;
+					sconst_1;
+					invokevirtual 32;		// setOutgoingLength(S)V
+					aload_2;
+					sconst_0;
+					bspush -112;
+					bastore;
+					aload_1;
+					sconst_0;
+					sconst_1;
+					invokevirtual 34;		// sendBytes(SS)V
+					return;
+		}
+
+		.method private ajouterTransaction([BS)V {
+			.stack 6;
+			.locals 1;
+
+				L0:	getfield_s_this 6;		// short compte/MonCompte.historyIndex
+					bspush 10;
+					if_scmpge L2;
+				L1:	getfield_a_this 5;		// reference compte/MonCompte.historique
+					getfield_s_this 6;		// short compte/MonCompte.historyIndex
+					new 11;		// compte/MonCompte$Transaction
+					dup;
+					aload_1;
+					sload_2;
+					invokespecial 35;		// compte/MonCompte$Transaction.<init>([BS)V
+					aastore;
+					aload_0;
+					dup;
+					getfield_s 6;		// short compte/MonCompte.historyIndex
+					sconst_1;
+					sadd;
+					putfield_s 6;		// short compte/MonCompte.historyIndex
+					goto L6;
+				L2:	sconst_1;
+					sstore_3;
+					goto L4;
+				L3:	getfield_a_this 5;		// reference compte/MonCompte.historique
+					sload_3;
+					sconst_1;
+					ssub;
+					getfield_a_this 5;		// reference compte/MonCompte.historique
+					sload_3;
+					aaload;
+					aastore;
+					sinc 3 1;
+				L4:	sload_3;
+					bspush 10;
+					if_scmplt L3;
+				L5:	getfield_a_this 5;		// reference compte/MonCompte.historique
+					bspush 9;
+					new 11;		// compte/MonCompte$Transaction
+					dup;
+					aload_1;
+					sload_2;
+					invokespecial 35;		// compte/MonCompte$Transaction.<init>([BS)V
+					aastore;
+				L6:	return;
+		}
+
+		.method private consulterHistorique(Ljavacard/framework/APDU;)V {
+			.stack 5;
+			.locals 5;
+
+			.descriptor	Ljavacard/framework/APDU;	1.10;
+
+				L0:	aload_1;
+					invokevirtual 17;		// getBuffer()[B
+					astore_2;
+					sconst_0;
+					sstore_3;
+					sconst_0;
+					sstore 4;
+					goto L2;
+				L1:	getfield_a_this 5;		// reference compte/MonCompte.historique
+					sload 4;
+					aaload;
+					astore 5;
+					sinc 3 2;
+					sload_3;
+					aload 5;
+					getfield_a 0;		// reference compte/MonCompte$Transaction.type
+					arraylength;
+					sadd;
+					sstore_3;
+					sinc 3 2;
+					sinc 4 1;
+				L2:	sload 4;
+					getfield_s_this 6;		// short compte/MonCompte.historyIndex
+					if_scmplt L1;
+				L3:	aload_1;
+					invokevirtual 31;		// setOutgoing()S
+					pop;
+					aload_1;
+					sload_3;
+					invokevirtual 32;		// setOutgoingLength(S)V
+					sconst_0;
+					sstore 4;
+					sconst_0;
+					sstore 5;
+					goto L5;
+				L4:	getfield_a_this 5;		// reference compte/MonCompte.historique
+					sload 5;
+					aaload;
+					astore 6;
+					aload_2;
+					sload 4;
+					aload 6;
+					getfield_s 2;		// short compte/MonCompte$Transaction.ID
+					bspush 8;
+					sshr;
+					s2b;
+					bastore;
+					aload_2;
+					sload 4;
+					sconst_1;
+					sadd;
+					aload 6;
+					getfield_s 2;		// short compte/MonCompte$Transaction.ID
+					sspush 255;
+					sand;
+					s2b;
+					bastore;
+					sinc 4 2;
+					aload 6;
+					getfield_a 0;		// reference compte/MonCompte$Transaction.type
+					sconst_0;
+					aload_2;
+					sload 4;
+					aload 6;
+					getfield_a 0;		// reference compte/MonCompte$Transaction.type
+					arraylength;
+					invokestatic 36;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					pop;
+					sload 4;
+					aload 6;
+					getfield_a 0;		// reference compte/MonCompte$Transaction.type
+					arraylength;
+					sadd;
+					sstore 4;
+					aload_2;
+					sload 4;
+					aload 6;
+					getfield_s 1;		// short compte/MonCompte$Transaction.montant
+					bspush 8;
+					sshr;
+					s2b;
+					bastore;
+					aload_2;
+					sload 4;
+					sconst_1;
+					sadd;
+					aload 6;
+					getfield_s 1;		// short compte/MonCompte$Transaction.montant
+					sspush 255;
+					sand;
+					s2b;
+					bastore;
+					sinc 4 2;
+					sinc 5 1;
+				L5:	sload 5;
+					getfield_s_this 6;		// short compte/MonCompte.historyIndex
+					if_scmplt L4;
+				L6:	aload_1;
+					sconst_0;
+					sload_3;
+					invokevirtual 34;		// sendBytes(SS)V
+					return;
+		}
+
+	}
+
+}
