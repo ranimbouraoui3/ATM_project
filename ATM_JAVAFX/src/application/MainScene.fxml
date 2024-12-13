@@ -134,5 +134,40 @@
             </ImageView>
          </children>
       </AnchorPane>
+      <AnchorPane prefHeight="627.0" prefWidth="956.0" visible="false">
+         <children>
+            <Text layoutX="412.0" layoutY="128.0" style="-fx-fill: #ffa900; -fx-font-family: 'Gagalin'; -fx-font-size: 60;" text="menu" />
+            <ImageView fitHeight="149.0" fitWidth="269.0" layoutX="690.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/bank.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="150.0" fitWidth="250.0" layoutX="353.0" layoutY="190.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/summary_btn.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="150.0" fitWidth="250.0" layoutX="603.0" layoutY="331.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/withdraw_btn.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="150.0" fitWidth="250.0" layoutX="103.0" layoutY="331.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/deposit_btn.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="150.0" fitWidth="250.0" layoutX="353.0" layoutY="454.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/balance_btn.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="90.0" fitWidth="177.0" layoutX="-6.0" layoutY="537.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/eject_btn.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>
