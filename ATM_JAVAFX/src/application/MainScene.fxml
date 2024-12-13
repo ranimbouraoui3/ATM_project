@@ -135,7 +135,7 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="627.0" prefWidth="956.0" visible="false">
+      <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="627.0" prefWidth="956.0">
          <children>
             <Text layoutX="412.0" layoutY="128.0" style="-fx-fill: #ffa900; -fx-font-family: 'Gagalin'; -fx-font-size: 60;" text="menu" />
             <ImageView fitHeight="149.0" fitWidth="269.0" layoutX="690.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
@@ -170,7 +170,7 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="633.0" prefWidth="956.0">
+      <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="633.0" prefWidth="956.0" visible="false">
          <children>
             <ImageView fitHeight="714.0" fitWidth="1081.0" layoutX="-63.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
                <image>
