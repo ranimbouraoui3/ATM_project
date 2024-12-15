@@ -22,9 +22,9 @@ public class Main extends Application {
             primaryStage.setScene(scene);
 
             // Make the application adaptable to full-screen
-            primaryStage.setMaximized(true); // Start maximized
+            primaryStage.setMaximized(false); // Start maximized
             primaryStage.setFullScreenExitHint(""); // Optional: disable the exit hint for full-screen
-            primaryStage.setFullScreen(true); // Enable full-screen mode
+            primaryStage.setFullScreen(false); // Enable full-screen mode
             
             // Show the Stage
             primaryStage.show();
