@@ -209,7 +209,27 @@
             <String fx:value="btn_1" />
          </styleClass>
       </AnchorPane>
-      <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="627.0" prefWidth="956.0">
+      <AnchorPane prefHeight="633.0" prefWidth="956.0">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="198.0" layoutX="778.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/bank.png" />
+               </image>
+            </ImageView>
+            <TextFlow layoutX="290.0" layoutY="70.0" prefHeight="72.0" prefWidth="378.0">
+               <children>
+                  <Text style="-fx-fill: white; -fx-font-family: 'Gagalin'; -fx-font-size: 60;" text="ACCESS " textAlignment="CENTER" wrappingWidth="168.62002563476562" />
+                  <Text style="-fx-fill: #dd202b; -fx-font-family: 'Gagalin'; -fx-font-size: 60;" text="DENIED" wrappingWidth="207.57998657226562" />
+               </children>
+            </TextFlow>
+            <ImageView fitHeight="395.0" fitWidth="344.0" layoutX="306.0" layoutY="202.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/access_denied.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="627.0" prefWidth="956.0" visible="false">
          <children>
             <Text layoutX="412.0" layoutY="128.0" style="-fx-fill: #ffa900; -fx-font-family: 'Gagalin'; -fx-font-size: 60;" text="menu" />
             <ImageView fitHeight="150.0" fitWidth="198.0" layoutX="778.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
