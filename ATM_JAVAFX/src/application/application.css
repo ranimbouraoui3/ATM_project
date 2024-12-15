@@ -48,4 +48,44 @@
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.6), 15, 0.7, 0, 4); /* Enhanced and larger shadow */
 }
 
+.text-field {
+    -fx-font-family: "Gagalin";
+    -fx-font-size: 40px;
+    -fx-alignment: center;
+    -fx-text-fill: #000000; /* Text color */
+    -fx-background-color: linear-gradient(to bottom, #ffffff, #e6e6e6); /* Gradient background */
+    -fx-border-color: #cccccc; /* Border color */
+    -fx-border-radius: 5px; /* Rounded corners */
+    -fx-padding: 5px; /* Padding inside */
+    -fx-background-radius: 5px; /* Rounded corners for the background */
+    -fx-prompt-text-fill: #aaaaaa; /* Placeholder text color */
+    -fx-border-width: 1px; /* Border width */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 2, 0.5, 0, 1); /* Shadow effect */
+}
+#balance_label,#balance_amount {
+    -fx-font-family: "Gagalin";
+    -fx-font-size: 40px;
+    -fx-alignment: center;
+    -fx-text-fill: #000000; /* Text color */
+    -fx-background-color: linear-gradient(to bottom, #ffffff, #e6e6e6); /* Gradient background */
+    -fx-border-color: #cccccc; /* Border color */
+    -fx-border-radius: 5px; /* Rounded corners */
+    -fx-padding: 5px; /* Padding inside */
+    -fx-background-radius: 5px; /* Rounded corners for the background */
+    -fx-border-width: 1px; /* Border width */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 2, 0.5, 0, 1); /* Shadow effect */
+    -fx-wrap-text: true;        /* Allow the text to wrap if it's too long */
+
+}
+
+#deposit_label, #withdraw_label{
+	-fx-font-family: "Gagalin";
+    -fx-font-size: 40px;
+    -fx-alignment: center;
+    -fx-text-fill: #ffffff;
+}
+
+.btn_1 {
+    -fx-padding:0.0 
+}
 
