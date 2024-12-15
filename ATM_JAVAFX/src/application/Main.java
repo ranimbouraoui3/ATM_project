@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 public class Main extends Application {
@@ -18,13 +19,14 @@ public class Main extends Application {
             Scene scene = new Scene(root);
 
             // Set the Scene to the Stage
-            primaryStage.setTitle("Hello, World");
+            primaryStage.setTitle("ATM SIMULATOR");
             primaryStage.setScene(scene);
 
             // Make the application adaptable to full-screen
             primaryStage.setMaximized(false); // Start maximized
             primaryStage.setFullScreenExitHint(""); // Optional: disable the exit hint for full-screen
             primaryStage.setFullScreen(false); // Enable full-screen mode
+            primaryStage.setResizable(true);
             
             // Show the Stage
             primaryStage.show();

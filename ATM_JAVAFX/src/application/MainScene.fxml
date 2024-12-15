@@ -2,6 +2,8 @@
 
 <?import java.lang.String?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -9,9 +11,9 @@
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.text.TextFlow?>
 
-<AnchorPane fx:id="background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="633.0" prefWidth="956.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="background" prefHeight="633.0" prefWidth="956.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <AnchorPane layoutX="2.0" layoutY="4.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="633.0" prefWidth="956.0" visible="false">
+      <AnchorPane layoutX="2.0" layoutY="4.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="633.0" prefWidth="956.0">
          <children>
             <!-- TextFlow with Anchors -->
             <TextFlow layoutX="191.0" layoutY="69.0" AnchorPane.leftAnchor="191.0" AnchorPane.topAnchor="69.0">
@@ -209,9 +211,9 @@
             <String fx:value="btn_1" />
          </styleClass>
       </AnchorPane>
-      <AnchorPane prefHeight="633.0" prefWidth="956.0">
+      <AnchorPane prefHeight="633.0" prefWidth="956.0" visible="false">
          <children>
-            <ImageView fitHeight="150.0" fitWidth="198.0" layoutX="778.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="150.0" layoutX="778.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="473.20000000000005" AnchorPane.leftAnchor="780.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
                <image>
                   <Image url="@images/bank.png" />
                </image>
@@ -416,6 +418,53 @@
             <ImageView fitHeight="90.0" fitWidth="177.0" layoutX="7.0" layoutY="537.0" pickOnBounds="true" preserveRatio="true" visible="false">
                <image>
                   <Image url="@images/eject_btn2.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="633.0" prefWidth="956.0" visible="false">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="198.0" layoutX="778.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/bank.png" />
+               </image>
+            </ImageView>
+            <TableView fx:id="summary_table" layoutX="29.0" layoutY="183.0" prefHeight="338.0" prefWidth="900.0">
+              <columns>
+                <TableColumn fx:id="id_col" prefWidth="300.0" text="ID" />
+                <TableColumn prefWidth="300.0" text="Transaction" />
+                  <TableColumn prefWidth="300.0" text="Amount" />
+              </columns>
+            </TableView>
+            <Text layoutX="389.0" layoutY="113.0" style="-fx-fill: #ffa900; -fx-font-family: 'Gagalin'; -fx-font-size: 60;" text="SUMMARY" />
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="407.0" layoutY="542.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/print_btn.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="407.0" layoutY="550.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@images/print_btn2.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="90.0" fitWidth="177.0" layoutX="7.0" layoutY="537.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/eject_btn.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="90.0" fitWidth="177.0" layoutX="7.0" layoutY="537.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@images/eject_btn2.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="60.0" fitWidth="69.0" layoutX="27.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/previous_btn.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="60.0" fitWidth="69.0" layoutX="27.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@images/previous_btn2.png" />
                </image>
             </ImageView>
          </children>

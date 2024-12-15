@@ -89,3 +89,34 @@
     -fx-padding:0.0 
 }
 
+/* TableView Styles */
+
+
+/* Column Header Styling */
+.table-view {
+    -fx-background-color: linear-gradient(to bottom, #f9f9f9, #e6e6e6); /* Subtle gradient for 3D effect */
+    -fx-border-color: #cccccc; /* Light gray border */
+    -fx-border-radius: 10px;   /* Rounded corners for the border */
+    -fx-background-radius: 10px; /* Match background to border for a seamless look */
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 10, 0, 2, 2); /* Soft drop shadow for 3D effect */
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #f2f2f2;    /* Light gray background */
+}
+
+.table-view .column-header .label {
+    -fx-font-family: 'Gagalin';       /* Gagalin font for headers */
+    -fx-font-size: 30px;              /* Adjust font size */           /* Center align text */
+    -fx-text-fill: #79bb05;           /* Dark text color */
+}
+
+/* Cell Styling */
+.table-view .cell {
+    -fx-font-family: 'Montserrat';    /* Montserrat font for content */
+    -fx-font-size: 18px;              /* Slightly larger text */
+    -fx-font-weight: bold;            /* Bold text */
+    -fx-alignment: center;            /* Center align text */
+    -fx-text-fill: #444444;           /* Dark gray text color */
+    -fx-background-color: #ffffff;    /* White background */
+}
